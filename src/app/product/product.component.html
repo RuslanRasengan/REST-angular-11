@@ -1,0 +1,16 @@
+<div *ngFor = "let product of products" class="product" >
+    <p class="item-id">{{product?.id}}</p>
+
+    <p class="item-title">{{product?.name}}</p>
+
+    <p class="item-price">{{product?.price}}</p>
+
+    <button class="delete" (click)="removeProduct(product.id)">Delete</button>
+    <button class="update" routerLink="/updateProduct/{{product.id}}">update</button>
+</div>
+
+<div>
+    <input [(ngModel)]="product.name">
+    <input [(ngModel)]="product.price">
+    <button class="update" (click)="postProduct(product)">Отправить</button>
+</div>
